@@ -1,18 +1,18 @@
-# Everthing is CRUD
 
-h1 align="center"> Everthing is CRUD </h1>
+
+<h1 align="center"> Everthing is CRUD </h1>
 
 <h2>Car Par API</h2>
 <p>Microserviço criado para gestão de controle de estacionamento de carros em condomínios</p>
 
 <h3> 🎯 Objetivo geral:</h3>
 <ul>
-  <li>Compreender melhor como funciona o microserviço</li>
-  <li>Implementar operações de CRUD, com validações.</li>
-  <li>Configuração e manipulação de banco de dados Postgres instaciados no Docker, utilizando o Dbeaver como ferramenta SGBD </li>
+  <li>Compreender melhor como o funcionamentos de microserviço com Spring Validation.</li>
+  <li>Implementar operações de CRUD.</li>
+  <li>Configuração e manipulação de banco de dados Postgres instaciados no Docker, utilizando o Dbeaver como ferramenta SGBD. </li>
   <li>Implementar o FlyWay para gerenciamento e criação de tabelas. </li>
-  <li>Realizar consultas com Spring Data e Postgres</li>
-  <li> Documentação da API via Swagger</li>
+  <li>Realizar consultas com Spring Data e Postgres.</li>
+  <li> Documentação da API via Swagger.</li>
 </ul>
 <hr/>
 
