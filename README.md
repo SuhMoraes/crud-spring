@@ -2,7 +2,7 @@
  Irei criar alguns microserviços :
 
  ## Car Park
-   Microserviço criado para gestão de controle de aluguel de carros.
+   Microserviço criado para gestão de controle de estacionamento de carros.
 
 ### Tecnologias utilizadas:
 
