@@ -3,6 +3,7 @@
 
  ## Car Park
    Microserviço criado para gestão de controle de estacionamento de carros.
+   
 
 ### Tecnologias utilizadas:
 
@@ -11,11 +12,11 @@
 - Spring Data JPA
 - Spring Validation
 - Spring Tools
-- Lombok
 - Postgres
 - FlyWay
 - Gradle
 - Docker
 - Java 17
 - Swagger
+- Dbeaver 
   
