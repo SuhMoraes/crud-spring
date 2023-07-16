@@ -5,7 +5,7 @@
 <h2>Car Par API</h2>
 <p>Microserviço criado para gestão de controle de estacionamento de carros em condomínios</p>
 
-<h3> 🎯 Objetivo geral:</h3>
+<h3> 🎯 Objetivo:</h3>
 <ul>
   <li>Compreender melhor como o funcionamentos de microserviço com Spring Validation.</li>
   <li>Implementar operações de CRUD.</li>
