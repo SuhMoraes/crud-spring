@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ParkingSpotService {
@@ -37,4 +39,16 @@ public class ParkingSpotService {
     public List<ParkingSpotModel> findAll() {
         return repository.findAll();
     }
+
+    public Optional<ParkingSpotModel> findByID(UUID id) {
+        return repository.findById(id);
+    }
+
+    @Transactional
+    public void delete(ParkingSpotModel parkingSpotModel) {
+        repository.delete(parkingSpotModel);
+    }
+
+
+
 }

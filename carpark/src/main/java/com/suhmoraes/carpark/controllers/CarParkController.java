@@ -15,6 +15,8 @@ import java.beans.Beans;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/car-park")
@@ -45,6 +47,40 @@ public class CarParkController {
     @GetMapping
     public ResponseEntity<List<ParkingSpotModel>> getAllParkingSpots() {
         return ResponseEntity.status(HttpStatus.OK).body(parkingSpotService.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getOneParkingSpot(@PathVariable(value = "id") UUID id) {
+        Optional<ParkingSpotModel> parkingSpotModelOptional = parkingSpotService.findByID(id);
+        if(!parkingSpotModelOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Parking Spot Not found!");
+        }
+        return  ResponseEntity.status(HttpStatus.OK).body(parkingSpotModelOptional.get());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> deleteOneParkingSpot(@PathVariable(value = "id") UUID id) {
+        Optional<ParkingSpotModel> parkingSpotModelOptional = parkingSpotService.findByID(id);
+        if(!parkingSpotModelOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Parking Spot not found!");
+        }
+        parkingSpotService.delete(parkingSpotModelOptional.get());
+        return  ResponseEntity.status(HttpStatus.OK).body("Parking Spot deleted successfully!");
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateParkingSpot(@PathVariable(value = "id") UUID id,
+                                                    @RequestBody @Valid ParkingSpotDTO parkingSpotDTO){
+        Optional<ParkingSpotModel> parkingSpotModelOptional = parkingSpotService.findByID(id);
+        if (!parkingSpotModelOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Parking Spot not found.");
+        }
+        var parkingSpotModel = new ParkingSpotModel();
+        BeanUtils.copyProperties(parkingSpotDTO, parkingSpotModel);
+        parkingSpotModel.setId(parkingSpotModelOptional.get().getId());
+        parkingSpotModel.setResgistrationDate(parkingSpotModelOptional.get().getResgistrationDate());
+        return ResponseEntity.status(HttpStatus.OK).body(parkingSpotService.save(parkingSpotModel));
+
     }
 
 
