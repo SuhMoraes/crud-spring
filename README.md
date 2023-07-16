@@ -6,10 +6,13 @@
 
 ### Tecnologias utilizadas:
 
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Spring Validation
 - Spring Tools
 - Lombok
-- Spring Data JPA
-- My SQL
+- Postgres
 - FlyWay
 - Gradle
 - Docker
