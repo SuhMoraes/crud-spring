@@ -28,8 +28,7 @@
 <p>✔️ Dbeaver</p>
 <p>✔️ Intellij</p>
 <p>✔️ Gerenciador de Dependência: Gradle</p>
-<p>✔️ Dependência: Spring Web/p>
-<p>✔️ Application Properties: YAML</p>
+<p>✔️ Application: YAML</p>
 <p>✔️ Java 17</p>
 <p>✔️ Docker: criação de container Postgres</p>
 <p>✔️ Swagger</p>
