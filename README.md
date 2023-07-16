@@ -1,4 +1,18 @@
 # Tudo é CRUD
+ Irei criar alguns microserviços :
 
-Quando a base é sólida, os desafios ficam mais fáceis. 
-Criando aquele feijão com arroz bem feito com Spring.
+ ## Car Park
+   Microserviço criado para gestão de controle de aluguel de carros.
+
+### Tecnologias utilizadas:
+
+- Spring Tools
+- Lombok
+- Spring Data JPA
+- My SQL
+- FlyWay
+- Gradle
+- Docker
+- Java 17
+- Swagger
+  
