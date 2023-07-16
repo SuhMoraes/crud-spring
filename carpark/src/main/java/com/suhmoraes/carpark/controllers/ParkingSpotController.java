@@ -7,11 +7,9 @@ import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.beans.Beans;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
@@ -21,7 +19,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/car-park")
 @CrossOrigin(origins ="*", maxAge = 3600)
-public class CarParkController {
+public class ParkingSpotController {
 
     @Autowired
     private ParkingSpotService parkingSpotService;

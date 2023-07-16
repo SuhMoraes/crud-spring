@@ -1,6 +1,6 @@
 package com.suhmoraes.carpark.services;
 
-import com.suhmoraes.carpark.dtos.ParkingSpotDTO;
+
 import com.suhmoraes.carpark.models.ParkingSpotModel;
 import com.suhmoraes.carpark.repositories.ParkingSportRepository;
 import jakarta.transaction.Transactional;
@@ -18,7 +18,7 @@ public class ParkingSpotService {
     private ParkingSportRepository repository;
 
 
-    @Transactional
+
     public ParkingSpotModel save(ParkingSpotModel parkingSpotModel) {
         return repository.save(parkingSpotModel);
     }

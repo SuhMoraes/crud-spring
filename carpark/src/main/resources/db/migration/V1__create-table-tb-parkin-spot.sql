@@ -1,4 +1,4 @@
-CREATE TABLE parking_spot (
+CREATE TABLE tb_parking_spot(
   id UUID PRIMARY KEY,
   parking_spot_number VARCHAR(10) NOT NULL UNIQUE,
   license_plate_car VARCHAR(7) NOT NULL UNIQUE,

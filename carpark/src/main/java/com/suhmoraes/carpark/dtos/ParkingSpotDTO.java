@@ -3,9 +3,14 @@ package com.suhmoraes.carpark.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-
-import java.time.LocalDateTime;
-
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class ParkingSpotDTO {
 
     @NotBlank
