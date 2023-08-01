@@ -3,3 +3,8 @@ server:
 spring:
   application:
     name: calatog-api
+  jpa:
+    open-in-view: false
+    profiles:
+      active: test
+      defer-datasource-initialization: true

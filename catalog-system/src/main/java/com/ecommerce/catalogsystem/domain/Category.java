@@ -1,10 +1,22 @@
 package com.ecommerce.catalogsystem.domain;
 
+import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_category")
 public class Category implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Valid
+    @NotNull(message = "ID is required.")
     private Long id;
+    @NotBlank(message = "Name is required.")
     private String name;
 
     public Category() {
