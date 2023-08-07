@@ -12,7 +12,7 @@
                 <pattern>
                     <pattern>
                         {
-                        "app": "test-log"
+                        "app": "carpark"
                         }
                     </pattern>
                 </pattern>

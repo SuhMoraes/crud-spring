@@ -2,11 +2,22 @@
 
 Este repositório contém exemplos de CRUDs (Create, Read, Update, Delete) implementados em duas tecnologias diferentes: Spring Boot com várias ferramentas e Java 17 com Maven. O objetivo deste projeto é fornecer exemplos de como criar operações CRUD em duas das tecnologias mais populares no desenvolvimento de aplicações Java.
 
-## Primeiro CRUD :
- - [Projeto Carpark](https://github.com/SuhMoraes/crud-spring/tree/main/carpark)
-### Segundo CRUD :
- - [Projeto Catalog System](https://github.com/SuhMoraes/crud-spring/tree/main/catalog-system)
-## 📚 Recursos Adicionais:
+## Projeto Carpark
+  [Projeto Carpark](https://github.com/SuhMoraes/crud-spring/tree/main/carpark)
+
+#### Introdução ao Projeto
+
+A ideia do Carpark é um sistema de 
+
+
+## Catalog System  : 
+[Projeto Catalog System](https://github.com/SuhMoraes/crud-spring/tree/main/catalog-system)
+
+
+
+<br />
+
+### 📚 Recursos Adicionais:
 Aqui estão alguns recursos  ue foram utilizadas nesse projeto:
 
 - [Documentação Spring Boot](https://spring.io/projects/spring-boot): Documentação oficial do Spring Boot, com informações detalhadas sobre configuração, recursos e funcionalidades do framework.
