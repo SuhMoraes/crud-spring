@@ -1,0 +1,20 @@
+INSERT INTO TB_CATEGORY (name)
+VALUES
+    ('Sedan'),
+    ('SUV'),
+    ('Hatchback'),
+    ('Crossover'),
+    ('Esportivo'),
+    ('Utilitário'),
+    ('Compacto'),
+    ('Luxo'),
+    ('Pickup'),
+    ('Minivan'),
+    ('Conversível'),
+    ('Elétrico'),
+    ('Esportivo de Luxo'),
+    ('Subcompacto'),
+    ('Cupê'),
+    ('Off-Road'),
+    ('Clássico'),
+    ('Microcarro');
