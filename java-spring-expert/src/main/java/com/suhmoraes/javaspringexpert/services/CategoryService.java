@@ -3,14 +3,14 @@ package com.suhmoraes.javaspringexpert.services;
 import com.suhmoraes.javaspringexpert.domain.Category;
 import com.suhmoraes.javaspringexpert.dto.CategoryDTO;
 import com.suhmoraes.javaspringexpert.repository.CategoryRepository;
-import com.suhmoraes.javaspringexpert.services.exception.EntityNotFoundException;
-import org.springframework.beans.BeanUtils;
+import com.suhmoraes.javaspringexpert.services.exception.DatabaseException;
+import com.suhmoraes.javaspringexpert.services.exception.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +31,41 @@ public class CategoryService {
     @Transactional(readOnly = true)
     public CategoryDTO findById(Long id) {
         Optional<Category> obj = categoryRepository.findById(id);
-        Category entity = obj.orElseThrow(() -> new EntityNotFoundException("Category Not Found."));
+        Category entity = obj.orElseThrow(() -> new ResourceNotFoundException("Category Not Found."));
         return new CategoryDTO(entity);
     }
+
+    @Transactional
+    public CategoryDTO insert(CategoryDTO dto) {
+        Category entity = new Category();
+        entity.setName(dto.getName());
+        entity = categoryRepository.save(entity);
+        return new CategoryDTO(entity);
+    }
+
+    @Transactional
+    public CategoryDTO update(Long id ,CategoryDTO dto) {
+        try {
+            Category entity = categoryRepository.getReferenceById(id);
+            entity.setName(dto.getName());
+            entity = categoryRepository.save(entity);
+            return new CategoryDTO(entity);
+        } catch (EntityNotFoundException e){
+            throw new ResourceNotFoundException("ID not Found " + id);
+        }
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public void delete(Long id) {
+        if (!categoryRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Recurso não encontrado");
+        }
+        try {
+            categoryRepository.deleteById(id);
+        }
+        catch (DataIntegrityViolationException e) {
+            throw new DatabaseException("Falha de integridade referencial");
+        }
+    }
+
 }
