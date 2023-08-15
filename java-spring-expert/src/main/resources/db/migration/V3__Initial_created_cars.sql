@@ -1,0 +1,18 @@
+ CREATE TABLE TB_CAR_MODELS (
+    id INT PRIMARY KEY,
+    brand VARCHAR(50),
+    model VARCHAR(50),
+    production_year INT,
+    price DECIMAL(10,2),
+    engine_type VARCHAR(20),
+    engine_displacement DECIMAL(4, 2),
+    horsepower INT,
+    torque DECIMAL(5, 2),
+    top_speed DECIMAL(6, 2),
+    acceleration DECIMAL(4, 2),
+    transmission VARCHAR(20),
+    fuel_economy_city DECIMAL(4, 1),
+    fuel_economy_highway DECIMAL(4, 1),
+    curb_weight DECIMAL(6, 2),
+    dimensions VARCHAR(50),
+    drivetrain VARCHAR(20));
