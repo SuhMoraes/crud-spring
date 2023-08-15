@@ -1,6 +1,6 @@
 package com.suhmoraes.javaspringexpert.dto;
 
-import com.suhmoraes.javaspringexpert.entities.category.Category;
+import com.suhmoraes.javaspringexpert.entities.Category;
 
 import java.io.Serializable;
 

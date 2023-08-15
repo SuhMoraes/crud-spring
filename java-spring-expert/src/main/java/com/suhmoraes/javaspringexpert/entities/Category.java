@@ -1,4 +1,4 @@
-package com.suhmoraes.javaspringexpert.entities.category;
+package com.suhmoraes.javaspringexpert.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
