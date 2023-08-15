@@ -1,6 +1,6 @@
 package com.suhmoraes.javaspringexpert.services;
 
-import com.suhmoraes.javaspringexpert.domain.Category;
+import com.suhmoraes.javaspringexpert.entities.category.Category;
 import com.suhmoraes.javaspringexpert.dto.CategoryDTO;
 import com.suhmoraes.javaspringexpert.repository.CategoryRepository;
 import com.suhmoraes.javaspringexpert.services.exception.DatabaseException;
@@ -14,9 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class CategoryService {
