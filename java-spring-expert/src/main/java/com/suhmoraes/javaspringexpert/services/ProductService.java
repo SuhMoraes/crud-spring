@@ -1,12 +1,14 @@
 package com.suhmoraes.javaspringexpert.services;
 
+import com.suhmoraes.javaspringexpert.dto.CategoryDTO;
 import com.suhmoraes.javaspringexpert.dto.ProductDTO;
+import com.suhmoraes.javaspringexpert.entities.Category;
 import com.suhmoraes.javaspringexpert.entities.Product;
+import com.suhmoraes.javaspringexpert.repository.CategoryRepository;
 import com.suhmoraes.javaspringexpert.repository.ProductRepository;
 import com.suhmoraes.javaspringexpert.services.exception.DatabaseException;
 import com.suhmoraes.javaspringexpert.services.exception.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,8 +21,13 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
-    @Autowired
     public ProductRepository repository;
+    public CategoryRepository categoryRepository;
+
+    public ProductService(CategoryRepository categoryRepository, ProductRepository productRepository) {
+        this.categoryRepository = categoryRepository;
+        this.repository = productRepository;
+    }
 
     @Transactional(readOnly = true)
     public Page<ProductDTO> findAllPaged(PageRequest pageRequest){
@@ -39,7 +46,6 @@ public class ProductService {
     public ProductDTO insert(ProductDTO dto) {
         Product entity = new Product();
         copyEntityToDto(entity, dto);
-        entity.setName(dto.getName());
         entity = repository.save(entity);
         return new ProductDTO(entity);
     }
@@ -49,7 +55,6 @@ public class ProductService {
         try {
             Product entity = repository.getReferenceById(id);
             copyEntityToDto(entity, dto);
-            entity.setName(dto.getName());
             entity = repository.save(entity);
             return new ProductDTO(entity);
         } catch (EntityNotFoundException e){
@@ -71,11 +76,17 @@ public class ProductService {
     }
 
     private void copyEntityToDto(Product entity, ProductDTO dto) {
-        entity.setId(dto.getId());
         entity.setName(dto.getName());
-        entity.setDate(dto.getDate());
         entity.setDescription(dto.getDescription());
         entity.setImgUrl(dto.getImgUrl());
+        entity.setPrice(dto.getPrice());
+        entity.setDate(dto.getDate());
+
+        entity.getCategories().clear();
+        for(CategoryDTO catDto : dto.getCategories()) {
+            Category category = categoryRepository.getReferenceById(catDto.getId());
+            entity.getCategories().add(category);
+        }
     }
 
 

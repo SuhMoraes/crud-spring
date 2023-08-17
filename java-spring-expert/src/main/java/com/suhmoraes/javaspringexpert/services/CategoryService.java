@@ -1,7 +1,7 @@
 package com.suhmoraes.javaspringexpert.services;
 
-import com.suhmoraes.javaspringexpert.entities.Category;
 import com.suhmoraes.javaspringexpert.dto.CategoryDTO;
+import com.suhmoraes.javaspringexpert.entities.Category;
 import com.suhmoraes.javaspringexpert.repository.CategoryRepository;
 import com.suhmoraes.javaspringexpert.services.exception.DatabaseException;
 import com.suhmoraes.javaspringexpert.services.exception.ResourceNotFoundException;
