@@ -2,15 +2,17 @@
 
 Este repositório contém exemplos de CRUDs (Create, Read, Update, Delete) implementados em duas tecnologias diferentes: Spring Boot com várias ferramentas e Java 17 com Maven. O objetivo deste projeto é fornecer exemplos de como criar operações CRUD em duas das tecnologias mais populares no desenvolvimento de aplicações Java.
 
-## Projeto Carpark
-  [Projeto Carpark](https://github.com/SuhMoraes/crud-spring/tree/main/carpark)
+## 🎯 Projeto Carpark
+  🔗[Projeto Carpark](https://github.com/SuhMoraes/crud-spring/tree/main/carpark)
+  
+#### 📚 Introdução ao Projeto
+ Car Park API é um microserviço para a gestão de estacionamento em condomínios. Com foco no Spring Validation, implementa CRUD, PostgreSQL via Docker, FlyWay e Swagger
 
-#### Introdução ao Projeto
-
-EM CONSTRUÇÂO
+----
 
 
-## Catalog System  : 
-[Projeto Catalog System](https://github.com/SuhMoraes/crud-spring/tree/main/catalog-system)
+  
+## 🎯 Catalog System  : 
+🔗[Projeto Catalog System](https://github.com/SuhMoraes/crud-spring/tree/main/catalog-system)
 
 EM CONSTRUÇÂO
