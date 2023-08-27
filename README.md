@@ -15,4 +15,8 @@ Este repositório contém exemplos de CRUDs (Create, Read, Update, Delete) imple
 ## 🎯 Catalog System  : 
 🔗[Projeto Catalog System](https://github.com/SuhMoraes/crud-spring/tree/main/catalog-system)
 
-EM CONSTRUÇÂO
+  
+#### 📚 Introdução ao Projeto
+
+E-Commerce API é um projeto que explora tecnologias modernas para simular um e-commerce.
+Explore as stacks, como Spring Boot, Elastic Search e Docker, enquanto aprende a construir uma aplicação web completa.
